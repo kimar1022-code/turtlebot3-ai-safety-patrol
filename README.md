@@ -9,6 +9,13 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재·쓰
 팀 저장소에 있습니다: [eduwing-robotics/ros2-ai-amr-repo4](https://github.com/eduwing-robotics/ros2-ai-amr-repo4)
 
 <p align="center">
+  <a href="docs/videos/홍보영상.mp4">
+    <img src="docs/videos/promo-thumb.png" alt="프로젝트 홍보 영상" width="640" />
+  </a>
+  <br><em>▶ 프로젝트 홍보 영상 (3분 18초) — 이미지를 클릭하면 재생됩니다</em>
+</p>
+
+<p align="center">
   <img src="docs/images/gif_docking.gif" width="440" alt="자동 충전 도킹">
   <br><em>자동 충전 도킹 — 반복 정밀도 ±2mm, 진입각 -0.23°</em>
 </p>
@@ -24,7 +31,7 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재·쓰
 | 검증 체크리스트 | 45항목 구현·검증 | 파트 간 인터페이스 계약 v1.4 기준 |
 
 <p align="center">
-  <img src="docs/images/gif_handover.gif" width="380" alt="2대 자동 교대">
+  <img src="docs/images/gif_handover.gif" width="300" alt="2대 자동 교대">
   <br><em>충전 교대 — 근접 경보(0.33m) 속에 교차하며 한 대는 충전존으로, 한 대는 순찰 인계</em>
 </p>
 

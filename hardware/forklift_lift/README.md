@@ -4,8 +4,8 @@ TurtleBot3 위에 3D 프린팅 랙앤피니언 마스트 + SG90 서보로 만든
 관제 GUI의 수동조작 버튼으로 주행과 리프트를 함께 조작합니다.
 
 <p align="center">
-  <img src="images/forklift_side.jpg" width="420" alt="지게차 리프트 장착 측면">
-  <img src="images/forklift_top.jpg" width="420" alt="지게차 리프트 장착 상부">
+  <img src="images/forklift_side.jpg" width="380" alt="지게차 리프트 장착 측면">
+  <img src="images/forklift_top.jpg" width="430" alt="지게차 리프트 장착 상부">
   <br><em>3호기 장착 모습 — 3D 프린팅 마스트·포크와 팔레트 적재</em>
 </p>
 
