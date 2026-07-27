@@ -38,13 +38,13 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재·쓰
 - **하드웨어 확장** — 지게차 리프트(3D 프린팅 랙앤피니언+서보, 관제 연동), 마그네틱 포고핀 충전 단자
 
 <p align="center">
-  <img src="docs/images/gif_event.gif" width="440" alt="화재·쓰러짐 이벤트 출동">
-  <br><em>화재·쓰러짐 감지 → 이벤트 출동·증거 촬영 → 순찰 복귀 (32배속)</em>
+  <img src="docs/images/gif_robotcam.gif" width="440" alt="화재·쓰러짐 감지 순간 (로봇 시점)">
+  <br><em>이벤트 감지 순간 (로봇 시점) — 화재 FIRE 61% · 쓰러짐 FALL 87% (2.5배속)</em>
 </p>
 
 <p align="center">
-  <img src="docs/images/gif_robotcam.gif" width="440" alt="로봇 시점 카메라">
-  <br><em>같은 장면의 로봇 시점 (1호기·2호기) — 이벤트 접근과 도킹 마커 조준 (32배속)</em>
+  <img src="docs/images/gif_event.gif" width="440" alt="이벤트 출동 전체 흐름">
+  <br><em>전체 흐름 한눈에 — 순찰 → 이벤트 출동 → 복귀 (32배속 타임랩스)</em>
 </p>
 
 <p align="center">
