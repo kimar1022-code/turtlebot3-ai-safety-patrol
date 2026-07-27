@@ -42,6 +42,11 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재·쓰
   <br><em>정상 순찰 풀랩 → 충전 복귀 (10배속)</em>
 </p>
 
+<p align="center">
+  <img src="hardware/forklift_lift/images/transport_demo.gif" width="440" alt="지게차 리프트 상자 운반">
+  <br><em>지게차 리프트 3호기 — 상자 운반 풀사이클 (16배속, 상세는 <a href="hardware/forklift_lift/">hardware/forklift_lift</a>)</em>
+</p>
+
 ## 시스템 구성
 
 ```
