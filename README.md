@@ -43,6 +43,11 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재·쓰
 </p>
 
 <p align="center">
+  <img src="docs/images/gif_robotcam.gif" width="440" alt="로봇 시점 카메라">
+  <br><em>같은 장면의 로봇 시점 (1호기·2호기) — 이벤트 접근과 도킹 마커 조준 (32배속)</em>
+</p>
+
+<p align="center">
   <img src="docs/images/gif_patrol.gif" width="440" alt="정상 순찰 풀랩과 충전 복귀">
   <br><em>정상 순찰 풀랩 → 충전 복귀 (10배속)</em>
 </p>
