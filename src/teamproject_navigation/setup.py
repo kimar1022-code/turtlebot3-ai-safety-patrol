@@ -13,10 +13,7 @@ setup(
         ('share/' + package_name + '/config', ['config/waypoints.yaml']),
         ('share/' + package_name + '/launch', [
             'launch/robot_nodes.launch.py',
-            'launch/robot_bringup.launch.py',
-            'launch/keepout_filter.launch.py',
             'launch/keepout_filter_newmap.launch.py',
-            'launch/rviz_keepout.launch.py',
             'launch/nav2_norviz.launch.py',   # ★rviz 없는 Nav2 (TB3 런처가 rviz 무조건 띄우는 문제 대체)
         ]),
     ],

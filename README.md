@@ -64,6 +64,7 @@ Cartographer(SLAM) → AMCL(위치추정) → NavFn + RPP(경로계획·조향)
 ├── pi/                           # 로봇(RPi) 탑재 노드 — 도킹 실행기, UDP 카메라 센더
 ├── hardware/                     # 지게차 리프트(STL·구동 노드), 포고핀 충전 단자
 ├── scripts/                      # 기동/정지 운영 스크립트 (CLEAN_START 계열)
+├── nav_params/                   # Nav2 실사용 파라미터 (burger_rpp.yaml)
 ├── maps/                         # 맵, 금지구역 마스크, 순찰 그래프
 ├── calib/                        # 카메라 캘리브레이션 결과 (fx/cx가 도킹 정밀도를 좌우)
 └── docs/                         # 문제 해결 기록, 데모 이미지
