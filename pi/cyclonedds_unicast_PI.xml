@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  CycloneDDS 유니캐스트 설정 (WiFi 안정화)
+  ==========================================
+  · 멀티캐스트 OFF → WiFi에서 유실 심한 멀티캐스트 discovery 제거
+  · Peers 로 참여자 IP 직접 지정 (★로봇2: PC .4 / Pi .102 / 서버 .7)
+  · 수신버퍼 확대 → scan/odom 버스트 유실 방지
+
+  적용(각 머신):  export CYCLONEDDS_URI=file:///home/<user>/cyclonedds_unicast.xml
+  · 로봇2 PC(.4):    ~/cyclonedds_unicast.xml
+  · 로봇2 Pi(.102):  ~/cyclonedds_unicast.xml 로 복사 후 export
+  · 서버(.7): ROS2 노드를 돌릴 때만 필요. 카메라 UDP만이면 불필요.
+
+  주의: Peers 에 참여하지 않는 IP를 넣어도 무해(연결 시도만 실패). 그래서 .7 미리 포함.
+-->
+<CycloneDDS xmlns="https://cdds.io/config"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
+  <Domain id="any">
+    <General>
+      <!-- 멀티캐스트 완전 OFF → 순수 유니캐스트 -->
+      <AllowMulticast>spdp</AllowMulticast>
+      <MaxMessageSize>65500B</MaxMessageSize>
+    </General>
+
+    <Discovery>
+      <ParticipantIndex>auto</ParticipantIndex>
+      <MaxAutoParticipantIndex>64</MaxAutoParticipantIndex>
+      <!-- 유니캐스트 discovery 대상(모든 참여자 IP) -->
+      <Peers>
+        <Peer address="192.168.40.4"/>
+        <Peer address="192.168.40.5"/>  <!-- 1호기 PC (7/14: 어느 PC서든 접속) -->    <!-- 로봇2 PC -->
+        <Peer address="192.168.40.102"/>  <!-- 로봇2 Pi -->
+        <Peer address="192.168.40.7"/>    <!-- 서버(YOLO) — DDS 참여 시 -->
+      </Peers>
+    </Discovery>
+
+    <Internal>
+      <!-- scan/odom 버스트 유실 방지: 수신버퍼·워터마크 확대 -->
+      <SocketReceiveBufferSize min="10MB"/>
+      <Watermarks>
+        <WhcHigh>2MB</WhcHigh>
+      </Watermarks>
+    </Internal>
+  </Domain>
+</CycloneDDS>

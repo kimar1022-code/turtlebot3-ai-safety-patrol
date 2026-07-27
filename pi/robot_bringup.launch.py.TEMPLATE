@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+"""robot_bringup.launch.py — bringup(TF 전역) + UDP 카메라 송신기 + 도킹 실행노드
+   use_camera:=false 로 카메라 없이 띄울 수 있음 (기본 true)
+   use_dock_executor:=false 로 도킹 실행노드 없이 띄울 수 있음 (기본 true)
+   ※카메라: 옛 camera_ros ROS 노드 → UDP 이중송신기(서버 YOLO + 도킹PC ArUco)로 교체됨."""
+import os
+from launch import LaunchDescription
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, ExecuteProcess
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import PathJoinSubstitution, LaunchConfiguration
+from launch.conditions import IfCondition
+from launch_ros.actions import ComposableNodeContainer
+from launch_ros.descriptions import ComposableNode
+from launch_ros.substitutions import FindPackageShare
+
+
+def generate_launch_description():
+    tb3_bringup = FindPackageShare('turtlebot3_bringup')
+
+    use_camera = LaunchConfiguration('use_camera')
+    declare_use_camera = DeclareLaunchArgument(
+        'use_camera',
+        default_value='true',
+        description='카메라 on/off (false면 카메라 없이 브링업)',
+    )
+
+    # ★DOCK: Pi 로컬 도킹/언도킹 실행노드 (patrol_commander가 /robot1/dock_cmd로 구동).
+    #   상주하지만 IDLE에선 cmd_vel 미발행이라 순찰에 무영향. 실제 도킹 동작은
+    #   patrol_commander의 use_dock_executor 파라미터가 True일 때만 명령이 온다.
+    use_dock_executor = LaunchConfiguration('use_dock_executor')
+    declare_use_dock_executor = DeclareLaunchArgument(
+        'use_dock_executor',
+        default_value='true',
+        description='도킹 실행노드(pi_dock_executor) on/off',
+    )
+    dock_executor = ExecuteProcess(
+        # ★로봇2: patrol_commander가 /robot2 네임스페이스로 명령하므로 executor 토픽도 /robot2 로 주입.
+        #   (기본값은 /robot1 이라 안 넣으면 로봇2에서 도킹 명령이 안 잡힘. 1호기는 인자 없이 기본값.)
+        cmd=['python3', os.path.expanduser('~/pi_dock_executor.py'),
+             '--ros-args',
+             '-p', 'cmd_topic:=/robot2/dock_cmd', '-p', 'wall_yaw_offset_deg:=5.0',  # 7/14: 로봇2 라이다 장착각 보정(로봇1쪽 5도 비틀림 실측)
+             '-p', 'done_topic:=/robot2/dock_done'],
+        output='screen',
+        condition=IfCondition(use_dock_executor),
+    )
+
+    # ★UDP 카메라 송신기 (옛 camera_ros ROS 노드 대체).
+    #   imx219를 잡아 640x480 JPEG를 서버(YOLO)와 도킹PC(ArUco)로 이중송신.
+    #   ROS 카메라 노드가 아니라 imx219 단독점유 → 옛 camera_container는 제거함.
+    #   PC측 udp_camera_bridge.py가 dock_host에서 받아 ROS 토픽으로 재발행.
+    #   use_camera:=false 면 아예 안 띄움(카메라 없이 브링업).
+    server_host = LaunchConfiguration('server_host')
+    declare_server_host = DeclareLaunchArgument(
+        'server_host', default_value='192.168.40.7',
+        description='YOLO 서버 IP (UDP 카메라 1차 수신지)',
+    )
+    dock_host = LaunchConfiguration('dock_host')
+    declare_dock_host = DeclareLaunchArgument(
+        'dock_host', default_value='192.168.40.4',   # ★로봇2 PC (1호기는 .6)
+        description='도킹 PC IP (ArUco 브릿지가 여기서 UDP 수신)',
+    )
+    # ★로봇마다 카메라 UDP 포트가 달라야 함(같은 서버가 로봇 구분): 로봇1=5007, 로봇2=5008, 로봇3=5009.
+    #   PC의 udp_camera_bridge 도 CAM_PORT(=5008)로 수신하므로 반드시 일치.
+    cam_port = LaunchConfiguration('cam_port')
+    declare_cam_port = DeclareLaunchArgument(
+        'cam_port', default_value='5008',
+        description='카메라 UDP 송신 포트 (로봇2=5008). PC 브릿지 수신포트와 일치해야 함',
+    )
+    udp_camera = ExecuteProcess(
+        cmd=['python3', os.path.expanduser('~/turtlebot_udp_camera_sender.py'),
+             '--backend', 'gstreamer-libcamera',
+             '--host', server_host, '--port', cam_port,
+             '--width', '640', '--height', '480', '--fps', '10', '--jpeg-quality', '35',
+             '--extra-host', dock_host,
+             # ★chunk-size 60000 = 프레임당 UDP 1패킷(패킷율 450→25pps). 소패킷 폭주가
+             #   PC CycloneDDS의 scan/pose 수신을 굶기던 근본원인 → 이 값이 없으면 도킹·순찰 붕괴.
+             '--chunk-size', '60000'],
+             # 7/6 카메라 정방향 재장착 → --rotate-180 제거(달면 영상 뒤집힘+bearing 반전)
+        output='screen',
+        condition=IfCondition(use_camera),
+    )
+
+    return LaunchDescription([
+        declare_use_camera,
+        declare_use_dock_executor,
+        declare_server_host,
+        declare_dock_host,
+        declare_cam_port,
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(
+                PathJoinSubstitution([tb3_bringup, 'launch', 'robot.launch.py'])
+            ),
+        ),
+        udp_camera,
+        dock_executor,
+    ])
