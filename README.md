@@ -38,6 +38,11 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재·쓰
 - **하드웨어 확장** — 지게차 리프트(3D 프린팅 랙앤피니언+서보, 관제 연동), 마그네틱 포고핀 충전 단자
 
 <p align="center">
+  <img src="docs/images/gif_event.gif" width="440" alt="화재·쓰러짐 이벤트 출동">
+  <br><em>화재·쓰러짐 감지 → 이벤트 출동·증거 촬영 → 순찰 복귀 (32배속)</em>
+</p>
+
+<p align="center">
   <img src="docs/images/gif_patrol.gif" width="440" alt="정상 순찰 풀랩과 충전 복귀">
   <br><em>정상 순찰 풀랩 → 충전 복귀 (10배속)</em>
 </p>
