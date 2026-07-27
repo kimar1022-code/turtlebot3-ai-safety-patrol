@@ -1,0 +1,267 @@
+# =============================================================================
+# ros2-ai-amr-repo4 — 통합 저장소 (ROS2 자율주행 + Unity 관제 + 서버)
+#
+# 주의 1) .gitignore 는 줄 끝 인라인 주석을 지원하지 않는다.
+#          "Assets/*.meta   # 주석"  → '# 주석'까지 패턴에 포함되어 아무것도 안 걸린다.
+#          주석은 반드시 별도 줄에 쓸 것.
+# 주의 2) git 은 대소문자를 구분한다. Unity 는 Build/ Logs/ 처럼 대문자로 시작한다.
+#          ROS2 의 build/ log/ 와 별개 규칙이 필요하다. → [Bb] 형태로 둘 다 잡는다.
+# 주의 3) Unity 의 *.meta 는 절대 무시하면 안 된다(에셋 참조가 통째로 깨진다).
+#          아래 어떤 규칙도 .meta 를 잡지 않도록 유지할 것.
+# =============================================================================
+
+
+# =============================================================================
+# 공통
+# =============================================================================
+
+# ── 에디터 / IDE / OS ───────────────────────────────────────────────────────
+.vscode/
+.idea/
+.vs/
+.spyderproject
+.spyproject
+.ropeproject
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+tempCodeRunnerFile.py
+
+# ── 시크릿 / 환경변수 ───────────────────────────────────────────────────────
+# 절대 커밋 금지. .env.example 을 만들어 키 이름만 공유할 것.
+.env
+.env.*
+!.env.example
+.envrc
+*.pem
+*.key
+!*.pub
+.pypirc
+
+# ── 백업 규약 ───────────────────────────────────────────────────────────────
+# 수정 전 `cp <파일> <파일>.BEFORE_<변경내용>` 로 로컬 사본을 남긴다.
+# 되돌리기용이며 git history 가 그 역할을 대신하므로 커밋하지 않는다.
+# 접미사에 숫자/설명이 붙는 변종이 많아(PREV149, BAK_14nodes) 뒤에 * 를 둔다.
+*.BEFORE_*
+*.PREV*
+*.BAK*
+*.GOLDEN*
+*.OVERCAPTURE*
+*.DILATED*
+*.bak
+
+# ── 압축 / 대용량 산출물 ────────────────────────────────────────────────────
+# 원본이 필요하면 Git LFS 를 쓸 것 (git lfs track "*.tar.gz")
+*.tar.gz
+*.zip
+*.7z
+*.rar
+
+
+# =============================================================================
+# ROS2 자율주행 (robot / ros2_ws)
+# =============================================================================
+
+# ── colcon 빌드 산출물 ──────────────────────────────────────────────────────
+# src/ 안에도 중첩 생성되므로 앞에 / 를 붙이지 않는다(어느 깊이든 매칭).
+build/
+install/
+log/
+
+# ── 실행 산출물 ─────────────────────────────────────────────────────────────
+run_logs/
+*.log
+.ros/
+
+# ── rosbag ─────────────────────────────────────────────────────────────────
+*.db3
+*.mcap
+rosbag2_*/
+
+# ── ★맵 / 금지존 마스크 / 순찰 그래프는 반드시 커밋 ─────────────────────────
+# *.pgm 을 통째로 무시하면 map.pgm / keepout_mask_newmap.pgm 이 빠져
+# 다른 사람이 순찰·금지존을 재현할 수 없다. 무시 규칙을 두지 않는다.
+# keepout_draw.xcf(GIMP 원본)도 마스크를 다시 그리려면 필요하므로 커밋한다.
+
+# ── 카메라 캘리브 원본 ──────────────────────────────────────────────────────
+# calibrationdata.tar.gz(체커보드 원본)는 위 *.tar.gz 로 걸린다.
+# 결과물 calib/ost.yaml 은 반드시 커밋 (fx/cx 가 도킹 정밀도를 좌우).
+
+
+# =============================================================================
+# Unity (관제 GUI)
+# =============================================================================
+
+# ── Unity 가 재생성하는 것 (절대 커밋 금지, 수 GB) ──────────────────────────
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+.gradle/
+ExportedObj/
+
+# ── Unity 가 만드는 IDE 프로젝트 파일 ───────────────────────────────────────
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+sysinfo.txt
+
+# ── Unity 빌드 결과물 / 패키지 ──────────────────────────────────────────────
+*.apk
+*.aab
+*.app
+*.unitypackage
+crashlytics-build.properties
+
+# ── 에셋스토어 / JetBrains 플러그인 ─────────────────────────────────────────
+[Aa]ssets/AssetStoreTools*
+[Aa]ssets/Plugins/Editor/JetBrains*
+
+# ── ★Unity 주의사항 ────────────────────────────────────────────────────────
+# 1) *.meta 는 절대 무시하지 말 것. 위 규칙 중 .meta 를 잡는 것은 없다.
+# 2) *.so / *.dll 을 전역 무시하면 Assets/Plugins 의 네이티브 플러그인이 사라진다.
+#    → 전역 *.so 규칙을 두지 않는다. ROS 의 .so 는 build//install/ 안이라 이미 걸린다.
+# 3) 큰 에셋(fbx/텍스처/오디오)은 Git LFS 사용 권장.
+
+
+# =============================================================================
+# 서버 (YOLO / 관제 백엔드)
+# =============================================================================
+
+# ── Python ─────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[codz]
+*$py.class
+*.egg-info/
+*.egg
+.eggs/
+dist/
+sdist/
+wheels/
+.installed.cfg
+MANIFEST
+.venv
+venv/
+env/
+ENV/
+face-env/
+
+# ── Node (웹 프론트가 붙는 경우) ────────────────────────────────────────────
+node_modules/
+.next/
+.nuxt/
+.pnpm-store/
+npm-debug.log*
+yarn-error.log*
+
+# ── ★모델 가중치 (수백 MB — GitHub 파일당 100MB 제한) ───────────────────────
+# Git LFS 로 관리하거나, 릴리즈/외부 스토리지에 두고 다운로드 스크립트를 커밋할 것.
+*.pt
+*.pth
+*.onnx
+*.engine
+*.trt
+*.weights
+*.h5
+*.pb
+*.tflite
+*.caffemodel
+
+# ── AI Perception 로컬 런타임 자산 ───────────────────────────────────────────
+# 등록 얼굴 embedding은 개인정보를 포함한다. 모델과 학습 산출물은 별도 스토리지로 배포한다.
+registered_faces/
+*.npy
+.insightface/
+yolo_test/runs/
+
+# Face-recognition edge runtime state. Keep the example configuration tracked.
+ai_perception/face_recognition/edge_face_system/config/edge_local.yaml
+ai_perception/face_recognition/edge_face_system/data/
+ai_perception/face_recognition/edge_face_system/logs/
+ai_perception/face_recognition/edge_face_system/face_registry.json
+
+# ── 데이터셋 / 캡쳐 / 증거 사진 ─────────────────────────────────────────────
+datasets/
+captures/
+evidence/
+snapshots/
+*.mp4
+*.avi
+*.mov
+
+# ── DB ─────────────────────────────────────────────────────────────────────
+*.sqlite3
+*.sqlite3-journal
+*.db
+local_settings.py
+instance/
+
+# ── 테스트 / 정적분석 / 커버리지 ────────────────────────────────────────────
+.pytest_cache/
+.cache
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+cython_debug/
+
+# ── Jupyter ────────────────────────────────────────────────────────────────
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+
+# =============================================================================
+# 문서 / 로컬 도구
+# =============================================================================
+
+# ── 내부 문서는 커밋하지 않는다 ─────────────────────────────────────────────
+# 런북·회의록·검증노트는 개인/로컬 산출물이라 저장소를 어지럽힌다.
+# README.md 는 예외(루트 + 각 하위 프로젝트).
+# 팀에 공유할 문서가 생기면 docs/ 를 만들고 아래 무시 규칙에서 풀 것.
+*.md
+!README.md
+!**/README.md
+!**/docs/*.md
+
+*.docx
+*.pptx
+*.xlsx
+*.hwp
+
+docs/_build/
+docs_hub/
+/site
+CLAUDE.md
+.claude/
+
+# ── 디버깅 잔재 ─────────────────────────────────────────────────────────────
+*.xwd
+ksnip_*.png

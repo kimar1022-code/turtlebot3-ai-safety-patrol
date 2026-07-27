@@ -1,0 +1,10 @@
+int32   robot_id
+float32 x
+float32 y
+float32 yaw
+string  status
+float32 battery
+float32 linear_vel
+float32 angular_vel
+string  pause_reason
+int32   current_target_wp

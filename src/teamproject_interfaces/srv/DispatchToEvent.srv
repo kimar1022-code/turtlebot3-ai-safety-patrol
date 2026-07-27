@@ -1,0 +1,6 @@
+geometry_msgs/PoseStamped target   # 파견 목표 (frame_id="map"). HANDOVER는 이어갈 wp의 좌표
+string event_type                  # "HELMET" | "FALL" | "FIRE" | "HANDOVER"
+int32  target_wp_index             # HANDOVER 시 인계받아 이어갈 순찰 wp 번호 (그 외는 -1, 무시됨)
+---
+bool   accepted                    # 파견 수락 여부 (이미 PAUSED/수동 등이면 거부 가능)
+string message
