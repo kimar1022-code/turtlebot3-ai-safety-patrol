@@ -9,13 +9,13 @@ TurtleBot3 위에 3D 프린팅 랙앤피니언 마스트 + SG90 서보로 만든
   <br><em>3호기 장착 모습 — 3D 프린팅 마스트·포크와 팔레트 적재</em>
 </p>
 
-<table>
+<table align="center">
   <tr>
     <td align="center" valign="bottom" width="50%">
-      <img src="images/transport_demo.gif" width="1000" alt="상자 운반 시연">
+      <img src="images/transport_demo.gif" width="400" alt="상자 운반 시연">
     </td>
     <td align="center" valign="bottom" width="50%">
-      <img src="images/lift_demo.gif" width="42%" alt="리프트 구동 시연">
+      <img src="images/lift_demo.gif" width="170" alt="리프트 구동 시연">
     </td>
   </tr>
   <tr>
