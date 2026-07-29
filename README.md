@@ -10,9 +10,9 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 
 <div align="center">
   <a href="docs/videos/홍보영상.mp4">
-    <img src="docs/videos/promo-thumb.png" alt="프로젝트 홍보 영상" width="640" />
+    <img src="docs/videos/promo-thumb.png" alt="프로젝트 홍보 영상" width="1000" />
   </a>
-  <br><em>▶ 프로젝트 홍보 영상 (3분 18초) — 이미지를 클릭하면 재생됩니다</em>
+  <br><b>▶ 프로젝트 홍보 영상 (3분 18초)</b> — 이미지를 클릭하면 재생됩니다
 </div>
 
 ## 최종 성과
@@ -27,35 +27,53 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 
 ## 시연 장면
 
-<table align="center">
+<table>
   <tr>
-    <td align="center" width="50%">
-      <img src="docs/images/gif_robotcam.gif" width="400" alt="화재·쓰러짐 감지 순간 (로봇 시점)"><br>
-      <sub><b>이벤트 감지 순간 (로봇 시점)</b> — 화재 FIRE 61% · 쓰러짐 FALL 87% (2.5배속)</sub>
+    <td align="center" valign="bottom" width="50%">
+      <img src="docs/images/gif_robotcam.gif" width="1000" alt="화재·쓰러짐 감지 순간 (로봇 시점)">
     </td>
-    <td align="center" width="50%">
-      <img src="docs/images/gif_event.gif" width="400" alt="이벤트 출동 전체 흐름"><br>
-      <sub><b>출동 전체 흐름</b> — 순찰 → 이벤트 출동 → 복귀 (32배속 타임랩스)</sub>
+    <td align="center" valign="bottom" width="50%">
+      <img src="docs/images/gif_event.gif" width="1000" alt="이벤트 출동 전체 흐름">
     </td>
   </tr>
   <tr>
-    <td align="center" width="50%">
-      <img src="docs/images/gif_patrol.gif" width="400" alt="정상 순찰 풀랩과 충전 복귀"><br>
-      <sub><b>정상 순찰 풀랩</b> — 순찰 후 충전 복귀 (10배속)</sub>
+    <td align="center" valign="top">
+      <b>이벤트 감지 순간 (로봇 시점)</b><br>화재 FIRE 61% · 쓰러짐 FALL 87% (2.5배속)
     </td>
-    <td align="center" width="50%">
-      <img src="docs/images/gif_handover.gif" width="270" alt="2대 자동 교대"><br>
-      <sub><b>충전 교대</b> — 근접 경보(0.33m) 속 교차, 한 대는 충전존·한 대는 순찰 인계</sub>
+    <td align="center" valign="top">
+      <b>출동 전체 흐름</b><br>순찰 → 이벤트 출동 → 복귀 (32배속 타임랩스)
     </td>
   </tr>
   <tr>
-    <td align="center" width="50%">
-      <img src="docs/images/gif_docking.gif" width="400" alt="자동 충전 도킹"><br>
-      <sub><b>자동 충전 도킹</b> — 반복 정밀도 ±2mm, 진입각 -0.23°</sub>
+    <td align="center" valign="bottom">
+      <img src="docs/images/gif_patrol.gif" width="1000" alt="정상 순찰 풀랩과 충전 복귀">
     </td>
-    <td align="center" width="50%">
-      <img src="hardware/forklift_lift/images/transport_demo.gif" width="400" alt="지게차 리프트 상자 운반"><br>
-      <sub><b>지게차 리프트 (3호기)</b> — 상자 운반 풀사이클 (16배속, 상세는 <a href="hardware/forklift_lift/">hardware/forklift_lift</a>)</sub>
+    <td align="center" valign="bottom">
+      <img src="docs/images/gif_handover.gif" width="68%" alt="2대 자동 교대">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <b>정상 순찰 풀랩</b><br>순찰 후 충전 복귀 (10배속)
+    </td>
+    <td align="center" valign="top">
+      <b>충전 교대</b><br>근접 경보 속 교차 — 한 대는 충전존, 한 대는 순찰 인계
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="bottom">
+      <img src="docs/images/gif_docking.gif" width="1000" alt="자동 충전 도킹">
+    </td>
+    <td align="center" valign="bottom">
+      <img src="hardware/forklift_lift/images/transport_demo.gif" width="1000" alt="지게차 리프트 상자 운반">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <b>자동 충전 도킹</b><br>반복 정밀도 ±2mm, 진입각 -0.23°
+    </td>
+    <td align="center" valign="top">
+      <b>지게차 리프트 (3호기)</b><br>상자 운반 풀사이클 (16배속, 상세는 <a href="hardware/forklift_lift/">hardware/forklift_lift</a>)
     </td>
   </tr>
 </table>
