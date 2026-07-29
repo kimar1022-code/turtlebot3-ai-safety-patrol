@@ -4,20 +4,23 @@ TurtleBot3 위에 3D 프린팅 랙앤피니언 마스트 + SG90 서보로 만든
 관제 GUI의 수동조작 버튼으로 주행과 리프트를 함께 조작합니다.
 
 <p align="center">
-  <img src="images/forklift_side.jpg" width="380" alt="지게차 리프트 장착 측면">
-  <img src="images/forklift_top.jpg" width="430" alt="지게차 리프트 장착 상부">
+  <img src="images/forklift_side.jpg" height="240" alt="지게차 리프트 장착 측면">
+  <img src="images/forklift_top.jpg" height="240" alt="지게차 리프트 장착 상부">
   <br><em>3호기 장착 모습 — 3D 프린팅 마스트·포크와 팔레트 적재</em>
 </p>
 
-<p align="center">
-  <img src="images/transport_demo.gif" width="440" alt="상자 운반 시연">
-  <br><em>상자 운반 풀사이클 — 팔레트에서 상자를 실어 선반까지 (16배속)</em>
-</p>
-
-<p align="center">
-  <img src="images/lift_demo.gif" width="260" alt="리프트 구동 시연">
-  <br><em>랙앤피니언 리프트 벤치 구동</em>
-</p>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="images/transport_demo.gif" width="400" alt="상자 운반 시연"><br>
+      <sub><b>상자 운반 풀사이클</b> — 팔레트에서 상자를 실어 선반까지 (16배속)</sub>
+    </td>
+    <td align="center">
+      <img src="images/lift_demo.gif" width="170" alt="리프트 구동 시연"><br>
+      <sub><b>랙앤피니언 리프트</b> — 벤치 구동</sub>
+    </td>
+  </tr>
+</table>
 
 ## 구성
 

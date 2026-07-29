@@ -8,17 +8,12 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재·쓰
 이 저장소는 담당 파트의 코드·문서이며, 전체 시스템(AI 인식, 서버/DB, Unity 관제)은
 팀 저장소에 있습니다: [eduwing-robotics/ros2-ai-amr-repo4](https://github.com/eduwing-robotics/ros2-ai-amr-repo4)
 
-<p align="center">
+<div align="center">
   <a href="docs/videos/홍보영상.mp4">
     <img src="docs/videos/promo-thumb.png" alt="프로젝트 홍보 영상" width="640" />
   </a>
   <br><em>▶ 프로젝트 홍보 영상 (3분 18초) — 이미지를 클릭하면 재생됩니다</em>
-</p>
-
-<p align="center">
-  <img src="docs/images/gif_docking.gif" width="440" alt="자동 충전 도킹">
-  <br><em>자동 충전 도킹 — 반복 정밀도 ±2mm, 진입각 -0.23°</em>
-</p>
+</div>
 
 ## 최종 성과
 
@@ -30,10 +25,40 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재·쓰
 | 2대 자동 교대 | 개입 0회 | 1랩 = 1교대, 배터리 33%/85% 정책 |
 | 검증 체크리스트 | 45항목 구현·검증 | 파트 간 인터페이스 계약 v1.4 기준 |
 
-<p align="center">
-  <img src="docs/images/gif_handover.gif" width="300" alt="2대 자동 교대">
-  <br><em>충전 교대 — 근접 경보(0.33m) 속에 교차하며 한 대는 충전존으로, 한 대는 순찰 인계</em>
-</p>
+## 시연 장면
+
+<table align="center">
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/images/gif_robotcam.gif" width="400" alt="화재·쓰러짐 감지 순간 (로봇 시점)"><br>
+      <sub><b>이벤트 감지 순간 (로봇 시점)</b> — 화재 FIRE 61% · 쓰러짐 FALL 87% (2.5배속)</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/images/gif_event.gif" width="400" alt="이벤트 출동 전체 흐름"><br>
+      <sub><b>출동 전체 흐름</b> — 순찰 → 이벤트 출동 → 복귀 (32배속 타임랩스)</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/images/gif_patrol.gif" width="400" alt="정상 순찰 풀랩과 충전 복귀"><br>
+      <sub><b>정상 순찰 풀랩</b> — 순찰 후 충전 복귀 (10배속)</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/images/gif_handover.gif" width="270" alt="2대 자동 교대"><br>
+      <sub><b>충전 교대</b> — 근접 경보(0.33m) 속 교차, 한 대는 충전존·한 대는 순찰 인계</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/images/gif_docking.gif" width="400" alt="자동 충전 도킹"><br>
+      <sub><b>자동 충전 도킹</b> — 반복 정밀도 ±2mm, 진입각 -0.23°</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="hardware/forklift_lift/images/transport_demo.gif" width="400" alt="지게차 리프트 상자 운반"><br>
+      <sub><b>지게차 리프트 (3호기)</b> — 상자 운반 풀사이클 (16배속, 상세는 <a href="hardware/forklift_lift/">hardware/forklift_lift</a>)</sub>
+    </td>
+  </tr>
+</table>
 
 ## 담당한 것
 
@@ -43,26 +68,6 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재·쓰
 - **무인 운영** — 배터리 정책 기반 자동 충전·2대 교대, 로봇별 DDS 도메인 분리(97/88/4)
 - **안전 설계** — E-STOP 래치, 스캔 두절 감시, 데드맨, 금지구역 침범 감시
 - **하드웨어 확장** — 지게차 리프트(3D 프린팅 랙앤피니언+서보, 관제 연동), 마그네틱 포고핀 충전 단자
-
-<p align="center">
-  <img src="docs/images/gif_robotcam.gif" width="440" alt="화재·쓰러짐 감지 순간 (로봇 시점)">
-  <br><em>이벤트 감지 순간 (로봇 시점) — 화재 FIRE 61% · 쓰러짐 FALL 87% (2.5배속)</em>
-</p>
-
-<p align="center">
-  <img src="docs/images/gif_event.gif" width="440" alt="이벤트 출동 전체 흐름">
-  <br><em>전체 흐름 한눈에 — 순찰 → 이벤트 출동 → 복귀 (32배속 타임랩스)</em>
-</p>
-
-<p align="center">
-  <img src="docs/images/gif_patrol.gif" width="440" alt="정상 순찰 풀랩과 충전 복귀">
-  <br><em>정상 순찰 풀랩 → 충전 복귀 (10배속)</em>
-</p>
-
-<p align="center">
-  <img src="hardware/forklift_lift/images/transport_demo.gif" width="440" alt="지게차 리프트 상자 운반">
-  <br><em>지게차 리프트 3호기 — 상자 운반 풀사이클 (16배속, 상세는 <a href="hardware/forklift_lift/">hardware/forklift_lift</a>)</em>
-</p>
 
 ## 시스템 구성
 
