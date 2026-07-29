@@ -10,7 +10,7 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 
 <div align="center">
   <a href="docs/videos/홍보영상.mp4">
-    <img src="docs/videos/promo-thumb.png" alt="프로젝트 홍보 영상" width="1000" />
+    <img src="docs/videos/promo-thumb.png" alt="프로젝트 홍보 영상" width="640" />
   </a>
   <br><b>▶ 프로젝트 홍보 영상 (3분 18초)</b> — 이미지를 클릭하면 재생됩니다
 </div>
@@ -27,13 +27,13 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 
 ## 시연 장면
 
-<table>
+<table align="center">
   <tr>
     <td align="center" valign="bottom" width="50%">
-      <img src="docs/images/gif_robotcam.gif" width="1000" alt="화재·쓰러짐 감지 순간 (로봇 시점)">
+      <img src="docs/images/gif_robotcam.gif" width="400" alt="화재·쓰러짐 감지 순간 (로봇 시점)">
     </td>
     <td align="center" valign="bottom" width="50%">
-      <img src="docs/images/gif_event.gif" width="1000" alt="이벤트 출동 전체 흐름">
+      <img src="docs/images/gif_event.gif" width="400" alt="이벤트 출동 전체 흐름">
     </td>
   </tr>
   <tr>
@@ -46,10 +46,10 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
   </tr>
   <tr>
     <td align="center" valign="bottom">
-      <img src="docs/images/gif_patrol.gif" width="1000" alt="정상 순찰 풀랩과 충전 복귀">
+      <img src="docs/images/gif_patrol.gif" width="400" alt="정상 순찰 풀랩과 충전 복귀">
     </td>
     <td align="center" valign="bottom">
-      <img src="docs/images/gif_handover.gif" width="68%" alt="2대 자동 교대">
+      <img src="docs/images/gif_handover.gif" width="270" alt="2대 자동 교대">
     </td>
   </tr>
   <tr>
@@ -62,10 +62,10 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
   </tr>
   <tr>
     <td align="center" valign="bottom">
-      <img src="docs/images/gif_docking.gif" width="1000" alt="자동 충전 도킹">
+      <img src="docs/images/gif_docking.gif" width="400" alt="자동 충전 도킹">
     </td>
     <td align="center" valign="bottom">
-      <img src="hardware/forklift_lift/images/transport_demo.gif" width="1000" alt="지게차 리프트 상자 운반">
+      <img src="hardware/forklift_lift/images/transport_demo.gif" width="400" alt="지게차 리프트 상자 운반">
     </td>
   </tr>
   <tr>
