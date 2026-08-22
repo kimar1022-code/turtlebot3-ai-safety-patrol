@@ -9,6 +9,11 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 팀 저장소에 있습니다: [eduwing-robotics/ros2-ai-amr-repo4](https://github.com/eduwing-robotics/ros2-ai-amr-repo4)
 
 <div align="center">
+  <img src="docs/images/robots_three.jpg" alt="TurtleBot3 3대" width="720" />
+  <br><em>왼쪽부터 1 · 2호기(순찰 · 이벤트 출동), 3호기(지게차 리프트)</em>
+</div>
+
+<div align="center">
   <a href="docs/videos/홍보영상.mp4">
     <img src="docs/videos/promo-thumb.png" alt="프로젝트 홍보 영상" width="640" />
   </a>
