@@ -9,6 +9,12 @@ TurtleBot3 위에 3D 프린팅 랙앤피니언 마스트 + SG90 서보로 만든
   <br><em>3호기 장착 모습 — 3D 프린팅 마스트·포크와 팔레트 적재</em>
 </p>
 
+<p align="center">
+  <img src="images/forklift_mech_iso.jpg" height="240" alt="마스트 기구부">
+  <img src="images/forklift_mech_side.jpg" height="240" alt="포크 측면">
+  <br><em>기구부 — 랙앤피니언 마스트와 SG90 서보, 포크 높이</em>
+</p>
+
 <table align="center">
   <tr>
     <td align="center" valign="bottom" width="50%">
