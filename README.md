@@ -9,11 +9,6 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 팀 저장소에 있습니다: [eduwing-robotics/ros2-ai-amr-repo4](https://github.com/eduwing-robotics/ros2-ai-amr-repo4)
 
 <div align="center">
-  <img src="docs/images/robots_three.jpg" alt="TurtleBot3 3대" width="720" />
-  <br><em>왼쪽부터 1 · 2호기(순찰 · 이벤트 출동), 3호기(지게차 리프트)</em>
-</div>
-
-<div align="center">
   <a href="docs/videos/홍보영상.mp4">
     <img src="docs/videos/promo-thumb.png" alt="프로젝트 홍보 영상" width="640" />
   </a>
@@ -91,6 +86,11 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 - **무인 운영** — 배터리 정책 기반 자동 충전 · 2대 교대, 로봇별 DDS 도메인 분리(97/88/4)
 - **안전 설계** — E-STOP 래치, 스캔 두절 감시, 데드맨, 금지구역 침범 감시
 - **하드웨어 확장** — 지게차 리프트(3D 프린팅 랙앤피니언+서보, 관제 연동), 마그네틱 포고핀 충전 단자
+
+<div align="center">
+  <img src="docs/images/robots_three.jpg" alt="TurtleBot3 3대" width="720" />
+  <br><em>왼쪽부터 1 · 2호기(순찰 · 이벤트 출동), 3호기(지게차 리프트)</em>
+</div>
 
 ## 시스템 구성
 
