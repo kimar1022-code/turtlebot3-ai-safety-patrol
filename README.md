@@ -12,7 +12,7 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
   <a href="docs/videos/홍보영상.mp4">
     <img src="docs/videos/promo-thumb.png" alt="프로젝트 홍보 영상" width="640" />
   </a>
-  <br><b>▶ 프로젝트 홍보 영상 (3분 18초)</b> — 이미지를 클릭하면 재생됩니다
+  <br><b>▶ 프로젝트 홍보 영상 (3분 18초)</b> - 이미지를 클릭하면 재생됩니다
 </div>
 
 ## 최종 성과
@@ -30,7 +30,7 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 <table align="center">
   <tr>
     <td align="center" valign="bottom" width="50%">
-      <img src="docs/images/gif_robotcam.gif" width="400" alt="화재·쓰러짐 감지 순간 (로봇 시점)">
+      <img src="docs/images/gif_robotcam.gif" width="400" alt="화재 · 쓰러짐 감지 순간 (로봇 시점)">
     </td>
     <td align="center" valign="bottom" width="50%">
       <img src="docs/images/gif_event.gif" width="400" alt="이벤트 출동 전체 흐름">
@@ -57,7 +57,7 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
       <b>정상 순찰 풀랩</b><br>순찰 후 충전 복귀 (10배속)
     </td>
     <td align="center" valign="top">
-      <b>충전 교대</b><br>근접 경보 속 교차 — 한 대는 충전존, 한 대는 순찰 인계
+      <b>충전 교대</b><br>근접 경보 속 교차 - 한 대는 충전존, 한 대는 순찰 인계
     </td>
   </tr>
   <tr>
@@ -80,12 +80,12 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 
 ## 담당한 것
 
-- **순찰 미션 제어** — rclpy 기반 `patrol_commander` 20상태 FSM 설계 · 구현 (순찰/파견/충전/비상)
-- **정밀 도킹** — 지도 해상도 5cm 환경에서 mm 단위 충전 단자 정렬 (접근 = ArUco, 자세 = 라이다 벽피팅, 깊이 = 라이다 절대거리)
-- **이벤트 출동** — AI 감지 좌표로 출동, 폐루프 비주얼 서보잉으로 증거 사진 촬영 (60cm · ±2°·수평 기준)
-- **무인 운영** — 배터리 정책 기반 자동 충전 · 2대 교대, 로봇별 DDS 도메인 분리(97/88/4)
-- **안전 설계** — E-STOP 래치, 스캔 두절 감시, 데드맨, 금지구역 침범 감시
-- **하드웨어 확장** — 지게차 리프트(3D 프린팅 랙앤피니언+서보, 관제 연동), 마그네틱 포고핀 충전 단자
+- **순찰 미션 제어** - rclpy 기반 `patrol_commander` 20상태 FSM 설계 · 구현 (순찰/파견/충전/비상)
+- **정밀 도킹** - 지도 해상도 5cm 환경에서 mm 단위 충전 단자 정렬 (접근 = ArUco, 자세 = 라이다 벽피팅, 깊이 = 라이다 절대거리)
+- **이벤트 출동** - AI 감지 좌표로 출동, 폐루프 비주얼 서보잉으로 증거 사진 촬영 (60cm · ±2° · 수평 기준)
+- **무인 운영** - 배터리 정책 기반 자동 충전 · 2대 교대, 로봇별 DDS 도메인 분리(97/88/4)
+- **안전 설계** - E-STOP 래치, 스캔 두절 감시, 데드맨, 금지구역 침범 감시
+- **하드웨어 확장** - 지게차 리프트(3D 프린팅 랙앤피니언+서보, 관제 연동), 마그네틱 포고핀 충전 단자
 
 <div align="center">
   <img src="docs/images/robots_three.jpg" alt="TurtleBot3 3대" width="720" />
@@ -95,7 +95,7 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 ## 시스템 구성
 
 ```
-Cartographer(SLAM) → AMCL(위치추정) → NavFn + RPP(경로계획·조향)
+Cartographer(SLAM) → AMCL(위치추정) → NavFn + RPP(경로계획 · 조향)
                                           │
                      patrol_commander (20상태 FSM) ← 서버/관제 명령
                                           │
@@ -109,11 +109,11 @@ Cartographer(SLAM) → AMCL(위치추정) → NavFn + RPP(경로계획·조향)
 
 ```
 ├── src/
-│   ├── teamproject_navigation/   # 순찰 FSM·launch·waypoint (ROS2 패키지)
+│   ├── teamproject_navigation/   # 순찰 FSM · launch · waypoint (ROS2 패키지)
 │   └── teamproject_interfaces/   # 파트 간 msg/srv 계약 v1.4
 ├── docking/                      # ArUco 정밀 도킹, 이벤트 융합, 금지구역 감시
-├── pi/                           # 로봇(RPi) 탑재 노드 — 도킹 실행기, UDP 카메라 센더
-├── hardware/                     # 지게차 리프트(STL·구동 노드), 포고핀 충전 단자
+├── pi/                           # 로봇(RPi) 탑재 노드 - 도킹 실행기, UDP 카메라 센더
+├── hardware/                     # 지게차 리프트(STL · 구동 노드), 포고핀 충전 단자
 ├── scripts/                      # 기동/정지 운영 스크립트 (CLEAN_START 계열)
 ├── nav_params/                   # Nav2 실사용 파라미터 (burger_rpp.yaml)
 ├── maps/                         # 맵, 금지구역 마스크, 순찰 그래프
@@ -131,9 +131,9 @@ PC(주행 스택)와 로봇(RPi, 센서 · 모터 · 카메라)으로 나뉩니�
 # 1. 빌드
 colcon build --packages-select teamproject_interfaces teamproject_navigation
 
-# 2. 로봇 기동 (RPi) — pi/robot_bringup.launch.py.TEMPLATE 참고
+# 2. 로봇 기동 (RPi) - pi/robot_bringup.launch.py.TEMPLATE 참고
 
-# 3. PC 스택 기동 — Nav2·도킹 · 융합 노드를 순차 게이트로 올림
+# 3. PC 스택 기동 - Nav2 · 도킹 · 융합 노드를 순차 게이트로 올림
 ./scripts/CLEAN_START.sh        # 1호기
 ./scripts/CLEAN_START_R2.sh     # 2호기 (도메인 88)
 
@@ -146,7 +146,7 @@ ros2 service call /robot1/set_mode teamproject_interfaces/srv/SetMode "{mode: 'P
 | 파라미터 | 기본값 | 설명 |
 |---|---|---|
 | `use_route_servo` | true | 순찰 주행을 서보 루트로 (이벤트 접근은 Nav2 회피) |
-| `use_nav2_event_approach` | true | 이벤트 접근을 Nav2로 — 장애물 회피 |
+| `use_nav2_event_approach` | true | 이벤트 접근을 Nav2로 - 장애물 회피 |
 | `use_clear_detour` | true | 막힘 5초 확정 시 자율 우회 |
 | `wall_yaw_offset_deg` | 로봇별 | 라이다 장착각 보정 (로봇2 비틀림 5° 해결) |
 | `servo_standoff` | 0.734 | 도킹 마커 스탠드오프 (실측값) |
@@ -154,11 +154,11 @@ ros2 service call /robot1/set_mode teamproject_interfaces/srv/SetMode "{mode: 'P
 
 ## 설계에서 지킨 것
 
-- **안전은 관문에서 강제한다** — E-STOP은 상태 전환이 지나가는 한 곳(`change_state`)에서 래치.
+- **안전은 관문에서 강제한다** - E-STOP은 상태 전환이 지나가는 한 곳(`change_state`)에서 래치.
   관제의 명시적 해제 없이는 어떤 코드도 풀 수 없다. 스캔 두절 감시, 수동조작 데드맨(0.5s)도 같은 원칙.
-- **한 제어루프에 두 기준을 섞지 않는다** — 도킹에서 벽 기준과 카메라 기준을 교대로 쓰면 진동한다.
+- **한 제어루프에 두 기준을 섞지 않는다** - 도킹에서 벽 기준과 카메라 기준을 교대로 쓰면 진동한다.
   단계마다 기준 하나(접근 = 마커, 자세 = 벽피팅, 깊이 = 라이다 절대거리)만 사용.
-- **타임아웃은 유도식으로** — 속도를 바꾸면 그 속도에 묶인 하드코딩 타임아웃이 깨진다. 전부 거리/속도 유도식으로 전환.
-- **추측 대신 측정** — 성공률 30%의 원인 후보 다섯을 수치로 하나씩 소거했다. 과정은 아래 문서에.
+- **타임아웃은 유도식으로** - 속도를 바꾸면 그 속도에 묶인 하드코딩 타임아웃이 깨진다. 전부 거리/속도 유도식으로 전환.
+- **추측 대신 측정** - 성공률 30%의 원인 후보 다섯을 수치로 하나씩 소거했다. 과정은 아래 문서에.
 
 문제 해결 과정 전체 기록: [docs/troubleshooting.md](docs/troubleshooting.md)
