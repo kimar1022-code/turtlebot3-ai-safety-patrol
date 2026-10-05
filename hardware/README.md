@@ -2,7 +2,7 @@
 
 로봇 3대 운용에 필요한 하드웨어 확장 두 가지입니다.
 
-| 모듈 <img src="../docs/images/layout/w100.png" width="100%" height="1"> | 내용 <img src="../docs/images/layout/w500.png" width="100%" height="1"> | 폴더 <img src="../docs/images/layout/w100.png" width="100%" height="1"> |
+| 모듈 <img src="../docs/images/layout/w450.png" width="100%" height="1"> | 내용 <img src="../docs/images/layout/w2100.png" width="100%" height="1"> | 폴더 <img src="../docs/images/layout/w400.png" width="100%" height="1"> |
 |---|---|---|
 | 지게차 리프트 | 3D 프린팅 랙앤피니언 + SG90 서보, 관제 수동조작 연동 (3호기) | [forklift_lift](forklift_lift/) |
 | 자동충전 단자 | 마그네틱 포고핀 4핀으로 도킹 충전 자동화 (1 · 2호기) | [charging_pogo](charging_pogo/) |

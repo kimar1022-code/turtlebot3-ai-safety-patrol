@@ -17,7 +17,7 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 
 ## 최종 성과
 
-| 항목 <img src="docs/images/layout/w100.png" width="100%" height="1"> | 결과 <img src="docs/images/layout/w200.png" width="100%" height="1"> | 비고 <img src="docs/images/layout/w400.png" width="100%" height="1"> |
+| 항목 <img src="docs/images/layout/w550.png" width="100%" height="1"> | 결과 <img src="docs/images/layout/w700.png" width="100%" height="1"> | 비고 <img src="docs/images/layout/w1750.png" width="100%" height="1"> |
 |---|---|---|
 | 주행 성공률 | 30% → **100%** | 원인은 주행 코드가 아니라 시간동기(chrony) |
 | 도킹 반복 정밀도 | **±2mm** / 진입각 -0.23° | ArUco 접근 + 라이다 벽피팅 자세 + 라이다 절대거리 |
@@ -143,7 +143,7 @@ ros2 service call /robot1/set_mode teamproject_interfaces/srv/SetMode "{mode: 'P
 
 ## 핵심 파라미터
 
-| 파라미터 <img src="docs/images/layout/w200.png" width="100%" height="1"> | 기본값 <img src="docs/images/layout/w100.png" width="100%" height="1"> | 설명 <img src="docs/images/layout/w400.png" width="100%" height="1"> |
+| 파라미터 <img src="docs/images/layout/w800.png" width="100%" height="1"> | 기본값 <img src="docs/images/layout/w250.png" width="100%" height="1"> | 설명 <img src="docs/images/layout/w1950.png" width="100%" height="1"> |
 |---|---|---|
 | `use_route_servo` | true | 순찰 주행을 서보 루트로 (이벤트 접근은 Nav2 회피) |
 | `use_nav2_event_approach` | true | 이벤트 접근을 Nav2로 - 장애물 회피 |

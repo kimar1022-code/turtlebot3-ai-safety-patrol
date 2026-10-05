@@ -37,7 +37,7 @@ TurtleBot3 위에 3D 프린팅 랙앤피니언 마스트 + SG90 서보로 만든
 
 ## 구성
 
-| 파일 <img src="../../docs/images/layout/w400.png" width="100%" height="1"> | 내용 <img src="../../docs/images/layout/w400.png" width="100%" height="1"> |
+| 파일 <img src="../../docs/images/layout/w1450.png" width="100%" height="1"> | 내용 <img src="../../docs/images/layout/w1550.png" width="100%" height="1"> |
 |---|---|
 | `TB3_Forklift_Mast_Upper.stl` / `TB3_Forklift_Mast_Lower.stl` | 마스트 3D 프린팅 모델 |
 | `pi_lift_servo.py` | Pi 상주 노드 - 서버 수동조작 릴레이 + 리프트 서보 구동 |
