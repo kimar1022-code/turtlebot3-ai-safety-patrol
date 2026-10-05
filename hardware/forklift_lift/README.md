@@ -4,25 +4,25 @@ TurtleBot3 위에 3D 프린팅 랙앤피니언 마스트 + SG90 서보로 만든
 관제 GUI의 수동조작 버튼으로 주행과 리프트를 함께 조작합니다.
 
 <p align="center">
-  <img src="images/forklift_side.jpg" height="240" alt="지게차 리프트 장착 측면">
-  <img src="images/forklift_top.jpg" height="240" alt="지게차 리프트 장착 상부">
+  <img src="images/forklift_side.jpg" alt="지게차 리프트 장착 측면" width="100%">
+  <img src="images/forklift_top.jpg" alt="지게차 리프트 장착 상부" width="100%">
   <br><em>3호기 장착 모습 - 3D 프린팅 마스트 · 포크와 팔레트 적재</em>
 </p>
 
 <p align="center">
-  <img src="images/forklift_mech_iso.jpg" height="240" alt="마스트 기구부">
-  <img src="images/forklift_mech_side.jpg" height="240" alt="포크 측면">
-  <img src="images/forklift_front.jpg" height="240" alt="포크 정면">
+  <img src="images/forklift_mech_iso.jpg" alt="마스트 기구부" width="100%">
+  <img src="images/forklift_mech_side.jpg" alt="포크 측면" width="100%">
+  <img src="images/forklift_front.jpg" alt="포크 정면" width="100%">
   <br><em>기구부 - 랙앤피니언 마스트와 SG90 서보, 포크 높이와 정면 폭</em>
 </p>
 
 <table align="center">
   <tr>
     <td align="center" valign="bottom" width="50%">
-      <img src="images/transport_demo.gif" width="400" alt="상자 운반 시연">
+      <img src="images/transport_demo.gif" alt="상자 운반 시연" width="100%">
     </td>
     <td align="center" valign="bottom" width="50%">
-      <img src="images/lift_demo.gif" width="170" alt="리프트 구동 시연">
+      <img src="images/lift_demo.gif" alt="리프트 구동 시연" width="100%">
     </td>
   </tr>
   <tr>
@@ -37,7 +37,7 @@ TurtleBot3 위에 3D 프린팅 랙앤피니언 마스트 + SG90 서보로 만든
 
 ## 구성
 
-| 파일 | 내용 |
+| 파일 <img src="../../docs/images/layout/w400.png" width="100%" height="1"> | 내용 <img src="../../docs/images/layout/w400.png" width="100%" height="1"> |
 |---|---|
 | `TB3_Forklift_Mast_Upper.stl` / `TB3_Forklift_Mast_Lower.stl` | 마스트 3D 프린팅 모델 |
 | `pi_lift_servo.py` | Pi 상주 노드 - 서버 수동조작 릴레이 + 리프트 서보 구동 |

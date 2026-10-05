@@ -3,7 +3,7 @@
 중복 노드가 서로 목표를 취소해 주행이 붕괴한 사고 이후, 기동 · 정지는 전부 스크립트로 통일했습니다.
 구조는 공통 본체 하나 + 로봇별 얇은 래퍼입니다.
 
-| 파일 | 역할 |
+| 파일 <img src="../docs/images/layout/w200.png" width="100%" height="1"> | 역할 <img src="../docs/images/layout/w900.png" width="100%" height="1"> |
 |---|---|
 | `CLEAN_START_COMMON.sh` | 공통 본체 - 이전 인스턴스 정리 → Nav2 active 확인 → 카메라 순차 게이트. 같은 PC 두 로봇 병행 시 도메인 스코프 킬 |
 | `CLEAN_START.sh` | 1호기 래퍼 (도메인 97) |

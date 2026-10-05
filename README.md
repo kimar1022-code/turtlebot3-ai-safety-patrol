@@ -10,14 +10,14 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 
 <div align="center">
   <a href="docs/videos/홍보영상.mp4">
-    <img src="docs/videos/promo-thumb.png" alt="프로젝트 홍보 영상" width="640" />
+    <img src="docs/videos/promo-thumb.png" alt="프로젝트 홍보 영상" width="100%" />
   </a>
   <br><b>▶ 프로젝트 홍보 영상 (3분 18초)</b> - 이미지를 클릭하면 재생됩니다
 </div>
 
 ## 최종 성과
 
-| 항목 | 결과 | 비고 |
+| 항목 <img src="docs/images/layout/w100.png" width="100%" height="1"> | 결과 <img src="docs/images/layout/w200.png" width="100%" height="1"> | 비고 <img src="docs/images/layout/w400.png" width="100%" height="1"> |
 |---|---|---|
 | 주행 성공률 | 30% → **100%** | 원인은 주행 코드가 아니라 시간동기(chrony) |
 | 도킹 반복 정밀도 | **±2mm** / 진입각 -0.23° | ArUco 접근 + 라이다 벽피팅 자세 + 라이다 절대거리 |
@@ -30,10 +30,10 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 <table align="center">
   <tr>
     <td align="center" valign="bottom" width="50%">
-      <img src="docs/images/gif_robotcam.gif" width="400" alt="화재 · 쓰러짐 감지 순간 (로봇 시점)">
+      <img src="docs/images/gif_robotcam.gif" alt="화재 · 쓰러짐 감지 순간 (로봇 시점)" width="100%">
     </td>
     <td align="center" valign="bottom" width="50%">
-      <img src="docs/images/gif_event.gif" width="400" alt="이벤트 출동 전체 흐름">
+      <img src="docs/images/gif_event.gif" alt="이벤트 출동 전체 흐름" width="100%">
     </td>
   </tr>
   <tr>
@@ -46,10 +46,10 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
   </tr>
   <tr>
     <td align="center" valign="bottom">
-      <img src="docs/images/gif_patrol.gif" width="400" alt="정상 순찰 풀랩과 충전 복귀">
+      <img src="docs/images/gif_patrol.gif" alt="정상 순찰 풀랩과 충전 복귀" width="100%">
     </td>
     <td align="center" valign="bottom">
-      <img src="docs/images/gif_handover.gif" width="270" alt="2대 자동 교대">
+      <img src="docs/images/gif_handover.gif" alt="2대 자동 교대" width="100%">
     </td>
   </tr>
   <tr>
@@ -62,10 +62,10 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
   </tr>
   <tr>
     <td align="center" valign="bottom">
-      <img src="docs/images/gif_docking.gif" width="400" alt="자동 충전 도킹">
+      <img src="docs/images/gif_docking.gif" alt="자동 충전 도킹" width="100%">
     </td>
     <td align="center" valign="bottom">
-      <img src="hardware/forklift_lift/images/transport_demo.gif" width="400" alt="지게차 리프트 상자 운반">
+      <img src="hardware/forklift_lift/images/transport_demo.gif" alt="지게차 리프트 상자 운반" width="100%">
     </td>
   </tr>
   <tr>
@@ -88,7 +88,7 @@ TurtleBot3 3대가 물류센터를 무인 순찰하며, AI가 위험(화재 · �
 - **하드웨어 확장** - 지게차 리프트(3D 프린팅 랙앤피니언+서보, 관제 연동), 마그네틱 포고핀 충전 단자
 
 <div align="center">
-  <img src="docs/images/robots_three.jpg" alt="TurtleBot3 3대" width="720" />
+  <img src="docs/images/robots_three.jpg" alt="TurtleBot3 3대" width="100%" />
   <br><em>왼쪽부터 1 · 2호기(순찰 · 이벤트 출동), 3호기(지게차 리프트)</em>
 </div>
 
@@ -143,7 +143,7 @@ ros2 service call /robot1/set_mode teamproject_interfaces/srv/SetMode "{mode: 'P
 
 ## 핵심 파라미터
 
-| 파라미터 | 기본값 | 설명 |
+| 파라미터 <img src="docs/images/layout/w200.png" width="100%" height="1"> | 기본값 <img src="docs/images/layout/w100.png" width="100%" height="1"> | 설명 <img src="docs/images/layout/w400.png" width="100%" height="1"> |
 |---|---|---|
 | `use_route_servo` | true | 순찰 주행을 서보 루트로 (이벤트 접근은 Nav2 회피) |
 | `use_nav2_event_approach` | true | 이벤트 접근을 Nav2로 - 장애물 회피 |

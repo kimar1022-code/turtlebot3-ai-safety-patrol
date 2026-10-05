@@ -3,7 +3,7 @@
 주기능: **자율 순찰(랩+도킹)** + **서버(관제) 수동조작**. 로봇1 · 2에서 실전 검증된 7/14자 최신 코드 전체입니다.
 
 ## 0. 확정값 (로봇3)
-| 항목 | 값 | 비고 |
+| 항목 <img src="../docs/images/layout/w100.png" width="100%" height="1"> | 값 <img src="../docs/images/layout/w100.png" width="100%" height="1"> | 비고 <img src="../docs/images/layout/w800.png" width="100%" height="1"> |
 |---|---|---|
 | ROS 도메인 | **4** | 1호기=97, 2호기=88 - 절대 겹치면 안 됨(겹치면 서로 붕괴) |
 | 네임스페이스 | /robot3 | robot_id:=3이 자동 부여 |
